@@ -1,0 +1,61 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Control-X</title>
+		<script src="logic.js"></script>
+		<link rel="stylesheet" href="main.css"></link>
+	</head>
+	<body>
+		<div>
+			<h1>CHANNELS</h1>
+			<a href="#" onclick="sendNEC('0x800FF')">ON/OFF</a>
+			<a href="#" onclick="sendNEC('0x8C03F')">1</a>
+			<a href="#" onclick="sendNEC('0x820DF')">2</a>
+			<a href="#" onclick="sendNEC('0x8A05F')">3</a>
+			<a href="#" onclick="sendNEC('0x8609F')">4</a>
+			<a href="#" onclick="sendNEC('0x8E01F')">5</a>
+			<a href="#" onclick="sendNEC('0x810EF')">6</a>
+			<a href="#" onclick="sendNEC('0x8906F')">7</a>
+			<a href="#" onclick="sendNEC('0x850AF')">8</a>
+			<a href="#" onclick="sendNEC('0x8D02F')">9</a>
+			<a href="#" onclick="sendNEC('0x830CF')">0</a>
+		</div>
+		<div>
+			<h1>SUBWOOFER</h1>
+			<a href="#" onclick="sendNEC('0x18E738C7')">ON/OFF</a>
+			<a href="#" onclick="sendNEC('0x18E718E7')">MUTE</a>
+			<a href="#" onclick="sendNEC('0x18E708F7')">UP</a>
+			<a href="#" onclick="sendNEC('0x18E7B04F')">DOWN</a>
+		</div>
+		<div>
+			<h1>VENT</h1>
+			<a href="#" onclick="sendNEC('0xFF6897')">ON/OFF</a>
+			<a href="#" onclick="sendNEC('0xFF807F')">LIGHT</a>
+			<a href="#" onclick="sendNEC('0xFF00FF')">UP</a>
+			<a href="#" onclick="sendNEC('0xFF40BF')">DOWN</a>
+		</div>
+		<div>
+			<h1>LAMP</h1>
+			<a href="#" onclick="sendNEC('0x1FE807F')">ON/OFF</a>
+			<a href="#" onclick="sendNEC('0x1FE609F')">MODE</a>
+			<a href="#" onclick="sendNEC('0x1FE7887')">UP</a>
+			<a href="#" onclick="sendNEC('0x1FE48B7')">DOWN</a>
+			<a href="#" onclick="sendNEC('0x1FEA05F')">NIGHT MODE</a>
+		</div>
+		<div>
+			<h1>LAMP #2</h1>
+			<a href="#" onclick="sendNEC('0x157B807F')">ON/OFF</a>
+			<a href="#" onclick="sendNEC('0x157B10EF')">TIMER</a>
+			<a href="#" onclick="sendNEC('0x157B00FF')">UP</a>
+			<a href="#" onclick="sendNEC('0x157BB04F')">DOWN</a>
+		</div>
+		<div>
+			<h1>CONDITIONER</h1>
+			<a href="#" style="width: 9%; float: left;" onclick="changeTemp(-1)">&lt;</a>
+			<a href="#" style="width: 9%; float: right;" onclick="changeTemp(1)">&gt;</a>
+			<p id="state">OFF</p>
+			<a href="#" onclick="runCond(); isRunning=true; document.getElementById('state').innerHTML = temperature.toString(10) + '°C';">ON</a>
+			<a href="#" onclick="sendLG('0x88C0051'); isRunning=false; document.getElementById('state').innerHTML = 'OFF';">OFF</a>
+		</div>
+	</body>
+</html>

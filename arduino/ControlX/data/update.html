@@ -1,0 +1,31 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Control-X | Update</title>
+		<script src="update.js"></script>
+		<link rel="stylesheet" href="update.css"></link>
+	</head>
+	<body>
+		<form name="updateform" id="main">
+			<div id="header">
+				<p>Firmware update</p>
+				<p>Control-X</p>
+			</div>
+			<div id="content">
+				<p id="filename">File not selected</p>
+				<label for="uploader" id="selectbtn">Select file</label>
+				<label onclick="update()">Update & reboot</label>
+				<input class="hidden" id="uploader" type="file" accept=".bin" name="update" onchange="filechanged(this)">
+			</div>
+		</form>
+		<form id="progress" hidden>
+			<div id="header">
+				<p>Progress...</p>
+				<p id="timer">30 sec</p>
+			</div>
+			<div id="progress-bg">
+				<div id="progress-bar"></div>
+			</div>
+		</form>
+	</body>
+</html>

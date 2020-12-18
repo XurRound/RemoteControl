@@ -1,0 +1,113 @@
+body {
+	position: relative;
+	background: #282C36;
+	color: #FFF;
+	font-family: "Segoe UI Light", sans-serif;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.hidden {
+	display: none;
+	z-index: -1;
+}
+
+#header {
+	display: flex;
+	justify-content: space-between;
+}
+
+#header > p {
+	font-size: 24px;
+	margin: 0px 0px 20px 0px;
+}
+
+#content {
+	display: flex;
+}
+
+#content > p {
+	color: #FFF;
+	display: block;
+	padding: 10px 20px;
+	background: #238b65;
+	transition: all 0.3s ease 0s;
+	text-decoration: none;
+	text-transform: uppercase;
+	margin: 5px;
+	margin-right: 0;
+	min-width: 200px;
+}
+
+#selectbtn {
+	margin-left: 0;
+}
+
+#progress {
+	min-width: 500px;
+}
+
+#progress-bg {
+	background: #e6e9ed;
+    position: relative;
+    height: 16px;
+    overflow: hidden;
+}
+
+#progress-bar {
+	overflow: hidden;
+    background: #3a8ddb;
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+	transition: width 1s linear;
+}
+
+#progress-bar:after
+{
+    background-image: -webkit-linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+    background-image: -o-linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+    background-image: linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+    -webkit-background-size: 40px 40px;
+    background-size: 40px 40px;
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+	animation: progress_bar 0.8s linear infinite;
+}
+
+@keyframes progress_bar {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 40px 0;
+    }
+}
+
+form {
+	padding: 20px;
+	background-color: #21242c;
+}
+
+label {
+	color: #FFF;
+	display: block;
+	padding: 10px 20px;
+	background: #238B65;
+	transition: all 0.3s ease 0s;
+	text-decoration: none;
+	text-transform: uppercase;
+	margin: 5px;
+	cursor: pointer;
+}
+
+label:hover {
+	background: #166347;
+}
