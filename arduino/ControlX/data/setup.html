@@ -1,0 +1,30 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Control-X | Setup</title>
+		<script src="setup.js"></script>
+		<link rel="stylesheet" href="setup.css"></link>
+	</head>
+	<body>
+		<form name="updateform" id="main">
+			<div id="header">
+				<p>Network setup</p>
+				<p>Control-X</p>
+			</div>
+			<div id="content">
+				<input id="ssidTb" type="text" placeholder="SSID"/>
+				<input id="passPb" type="password" placeholder="Password"/>
+				<label id="applyBtn" onclick="applyChanges()">Apply</label>
+			</div>
+		</form>
+		<form id="progress" hidden>
+			<div id="header">
+				<p>Progress...</p>
+				<p id="timer">30 sec</p>
+			</div>
+			<div id="progress-bg">
+				<div id="progress-bar"></div>
+			</div>
+		</form>
+	</body>
+</html>

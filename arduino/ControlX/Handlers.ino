@@ -8,10 +8,20 @@ void handleUpdatePage()
   server.send(200, "text/html", fileRead("/update.html"));
 }
 
+void handleSetupPage()
+{
+  server.send(200, "text/html", fileRead("/setup.html"));
+}
+
 void handleNotFound()
 {
+  if ((server.uri().indexOf("ssid.dat") != -1) || (server.uri().indexOf("pass.dat") != -1))
+  {
+    server.send(403, "text/html", "Forbidden");
+    return;
+  }
   String file = fileRead(server.uri());
-  if (file != ",-12,1" && (server.uri().indexOf("ssid.dat") == -1) && server.uri().indexOf("pass.dat") == -1))
+  if (file != ",-12,1")
   {
     String mime = "text/plain";
     if (server.uri().endsWith(".html"))

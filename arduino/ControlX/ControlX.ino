@@ -65,7 +65,11 @@ void setup()
     WiFi.mode(WIFI_AP);
     WiFi.softAP(selfSsid, selfPass);
 
-    server.on("/setup", handleSetup);
+    server.on("/", HTTP_GET, handleSetupPage);
+    server.on("/setup", HTTP_GET, handleSetupPage);
+    server.on("/setup", HTTP_POST, handleSetup);
+    server.onNotFound(handleNotFound);
+    
     server.begin();
     
     return;
